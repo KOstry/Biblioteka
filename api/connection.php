@@ -5,7 +5,11 @@ $username = 'root';
 $password = 'coderslab';
 $dbname = 'library';
 
+spl_autoload_register(function ($class){
 
+    require_once 'src/'.$class.'.php';
+}
+);
 
 $conn = new mysqli($server, $username, $password, $dbname);
 
